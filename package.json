@@ -8,7 +8,10 @@
     "lint": "echo \"Error: no lint specified\" && exit 0",
     "test": "echo \"Error: no test specified\" && exit 0",
     "format": "echo \"Error: no format specified\" && exit 0"
-},
+  },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "react-router-dom": "^6.17.0"
+  }
 }

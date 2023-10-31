@@ -1,12 +1,26 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import LocalSVG from './ExcalidrawSVG.jsx'
-import LocalImage from './ExcalidrawPNG.jsx'
-import './index.css'
+// main.jsx
+import React, { useState } from "react";
+import ReactDOM from "react-dom";
+import Welcome from "./Welcome.jsx";
+import Journal from "./Journal.jsx"; // Ensure you've imported the Journal component
+import "./global.css";
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+function MainApp() {
+  const [showJournal, setShowJournal] = useState(false);
+
+  return (
+    <div className="app-container">
+      {showJournal ? (
+        <Journal onGoBackClick={() => setShowJournal(false)} />
+      ) : (
+        <Welcome onDiaryClick={() => setShowJournal(true)} />
+      )}
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <LocalImage />
-  </React.StrictMode>,
-)
+    <MainApp />
+  </React.StrictMode>
+);
